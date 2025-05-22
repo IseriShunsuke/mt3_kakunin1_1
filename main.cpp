@@ -410,20 +410,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			playerLotate[2] = -playerLotate[2];
 		}
 
-		if (keys[DIK_W])
-		{
-			kLocalVertices[0].y += 0.01f;
-			kLocalVertices[1].y += 0.01f;
-			kLocalVertices[2].y += 0.01f;
-		}
-
-		if (keys[DIK_S])
-		{
-			kLocalVertices[0].y -= 0.01f;
-			kLocalVertices[1].y -= 0.01f;
-			kLocalVertices[2].y -= 0.01f;
-		}
-
 		if (keys[DIK_A])
 		{
 			kLocalVertices[0].x -= 0.01f;
@@ -442,12 +428,12 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			playerXSize[2] += 0.01f;
 		}
 
-		if (keys[DIK_Q])
+		if (keys[DIK_S])
 		{
 			cameraPosition.z -= 0.1f;
 		}
 
-		if (keys[DIK_E])
+		if (keys[DIK_W])
 		{
 			cameraPosition.z += 0.1f;
 		}
