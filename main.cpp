@@ -382,7 +382,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	kLocalVertices[1] = { 0.7f,0.1f,-1.0f };
 	kLocalVertices[2] = { 0.3f,0.1f,-1.0f };
 
-	float playerLotate[3] = { 0.005f,0.005f,0.005f };
 	float playerXSize[3] = { 0.5f, 0.7f,0.3f };
 
 	// ウィンドウの×ボタンが押されるまでループ
@@ -399,44 +398,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 
 
-		kLocalVertices[1].x -= playerLotate[1];
-		kLocalVertices[2].x += playerLotate[2];
-		if (kLocalVertices[1].x <= playerXSize[2] || kLocalVertices[1].x >= playerXSize[1])
-		{
-			playerLotate[1] = -playerLotate[1];
-		}
-		if (kLocalVertices[2].x <= playerXSize[2] || kLocalVertices[2].x >= playerXSize[1])
-		{
-			playerLotate[2] = -playerLotate[2];
-		}
-
-		if (keys[DIK_A])
-		{
-			kLocalVertices[0].x -= 0.01f;
-			kLocalVertices[1].x -= 0.01f;
-			playerXSize[1] -= 0.01f;
-			kLocalVertices[2].x -= 0.01f;
-			playerXSize[2] -= 0.01f;
-		}
-
-		if (keys[DIK_D])
-		{
-			kLocalVertices[0].x += 0.01f;
-			kLocalVertices[1].x += 0.01f;
-			playerXSize[1] += 0.01f;
-			kLocalVertices[2].x += 0.01f;
-			playerXSize[2] += 0.01f;
-		}
-
-		if (keys[DIK_S])
-		{
-			cameraPosition.z -= 0.1f;
-		}
-
-		if (keys[DIK_W])
-		{
-			cameraPosition.z += 0.1f;
-		}
+		
 		//new
 
 		Matrix4x4 worldMatrix = MakeAffineMatrix({ 1.0f,1.0f,1.0f }, rotate, translate);
@@ -453,6 +415,27 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 		}
 
+		if (keys[DIK_A])
+		{
+			translate.x -= 0.01f;
+		}
+		if (keys[DIK_D])
+		{
+			translate.x += 0.01f;
+		}
+		rotate.y += 0.01f;
+
+
+		if (keys[DIK_S])
+		{
+			cameraPosition.z -= 0.1f;
+		}
+
+		if (keys[DIK_W])
+		{
+			cameraPosition.z += 0.1f;
+		}
+
 		///
 		/// ↑更新処理ここまで
 		///
@@ -465,6 +448,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			int(screenVertices[0].x), int(screenVertices[0].y), int(screenVertices[1].x), int(screenVertices[1].y),
 			int(screenVertices[2].x), int(screenVertices[2].y), RED, kFillModeSolid
 		);
+		Novice::ScreenPrintf(30, 30, "%f", translate.x);
 		///
 		/// ↑描画処理ここまで
 		///
