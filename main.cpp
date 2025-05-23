@@ -32,20 +32,23 @@ Matrix4x4 Multiply(const Matrix4x4& m1, const Matrix4x4& m2)
 	Matrix4x4 result = {};
 
 	result.m[0][0] = m1.m[0][0] * m2.m[0][0] + m1.m[0][1] * m2.m[1][0] + m1.m[0][2] * m2.m[2][0] + m1.m[0][3] * m2.m[3][0];
-	result.m[0][1] = m1.m[0][0] * m2.m[0][1] + m1.m[0][1] * m2.m[1][2] + m1.m[0][2] * m2.m[2][1] + m1.m[0][3] * m2.m[3][1];
-	result.m[0][2] = m1.m[0][0] * m2.m[0][2] + m1.m[0][1] * m2.m[1][3] + m1.m[0][2] * m2.m[2][2] + m1.m[0][3] * m2.m[3][2];
+	result.m[0][1] = m1.m[0][0] * m2.m[0][1] + m1.m[0][1] * m2.m[1][1] + m1.m[0][2] * m2.m[2][1] + m1.m[0][3] * m2.m[3][1];
+	result.m[0][2] = m1.m[0][0] * m2.m[0][2] + m1.m[0][1] * m2.m[1][2] + m1.m[0][2] * m2.m[2][2] + m1.m[0][3] * m2.m[3][2];
 	result.m[0][3] = m1.m[0][0] * m2.m[0][3] + m1.m[0][1] * m2.m[1][3] + m1.m[0][2] * m2.m[2][3] + m1.m[0][3] * m2.m[3][3];
+
 	result.m[1][0] = m1.m[1][0] * m2.m[0][0] + m1.m[1][1] * m2.m[1][0] + m1.m[1][2] * m2.m[2][0] + m1.m[1][3] * m2.m[3][0];
 	result.m[1][1] = m1.m[1][0] * m2.m[0][1] + m1.m[1][1] * m2.m[1][1] + m1.m[1][2] * m2.m[2][1] + m1.m[1][3] * m2.m[3][1];
-	result.m[1][2] = m1.m[1][0] * m2.m[0][2] + m1.m[1][1] * m2.m[1][3] + m1.m[1][2] * m2.m[2][2] + m1.m[1][3] * m2.m[3][2];
+	result.m[1][2] = m1.m[1][0] * m2.m[0][2] + m1.m[1][1] * m2.m[1][2] + m1.m[1][2] * m2.m[2][2] + m1.m[1][3] * m2.m[3][2];
 	result.m[1][3] = m1.m[1][0] * m2.m[0][3] + m1.m[1][1] * m2.m[1][3] + m1.m[1][2] * m2.m[2][3] + m1.m[1][3] * m2.m[3][3];
+
 	result.m[2][0] = m1.m[2][0] * m2.m[0][0] + m1.m[2][1] * m2.m[1][0] + m1.m[2][2] * m2.m[2][0] + m1.m[2][3] * m2.m[3][0];
 	result.m[2][1] = m1.m[2][0] * m2.m[0][1] + m1.m[2][1] * m2.m[1][1] + m1.m[2][2] * m2.m[2][1] + m1.m[2][3] * m2.m[3][1];
-	result.m[2][2] = m1.m[2][0] * m2.m[0][2] + m1.m[2][1] * m2.m[1][3] + m1.m[2][2] * m2.m[2][2] + m1.m[2][3] * m2.m[3][2];
+	result.m[2][2] = m1.m[2][0] * m2.m[0][2] + m1.m[2][1] * m2.m[1][2] + m1.m[2][2] * m2.m[2][2] + m1.m[2][3] * m2.m[3][2];
 	result.m[2][3] = m1.m[2][0] * m2.m[0][3] + m1.m[2][1] * m2.m[1][3] + m1.m[2][2] * m2.m[2][3] + m1.m[2][3] * m2.m[3][3];
+
 	result.m[3][0] = m1.m[3][0] * m2.m[0][0] + m1.m[3][1] * m2.m[1][0] + m1.m[3][2] * m2.m[2][0] + m1.m[3][3] * m2.m[3][0];
-	result.m[3][1] = m1.m[3][0] * m2.m[0][1] + m1.m[3][1] * m2.m[1][2] + m1.m[3][2] * m2.m[2][1] + m1.m[3][3] * m2.m[3][1];
-	result.m[3][2] = m1.m[3][0] * m2.m[0][2] + m1.m[3][1] * m2.m[1][3] + m1.m[3][2] * m2.m[2][2] + m1.m[3][3] * m2.m[3][2];
+	result.m[3][1] = m1.m[3][0] * m2.m[0][1] + m1.m[3][1] * m2.m[1][1] + m1.m[3][2] * m2.m[2][1] + m1.m[3][3] * m2.m[3][1];
+	result.m[3][2] = m1.m[3][0] * m2.m[0][2] + m1.m[3][1] * m2.m[1][2] + m1.m[3][2] * m2.m[2][2] + m1.m[3][3] * m2.m[3][2];
 	result.m[3][3] = m1.m[3][0] * m2.m[0][3] + m1.m[3][1] * m2.m[1][3] + m1.m[3][2] * m2.m[2][3] + m1.m[3][3] * m2.m[3][3];
 
 	return result;
@@ -104,7 +107,7 @@ Matrix4x4 MakeRotateZMatrix(float radian)
 	result.m[0][1] = std::sin(radian);
 	result.m[0][2] = 0;
 	result.m[0][3] = 0;
-	result.m[1][0] = -std::sin(radian);
+	result.m[1][0] = -(std::sin(radian));
 	result.m[1][1] = std::cos(radian);
 	result.m[1][2] = 0;
 	result.m[1][3] = 0;
@@ -133,7 +136,7 @@ Matrix4x4 MakeScale(Vector3 scale)
 	result.m[1][3] = 0;
 	result.m[2][0] = 0;
 	result.m[2][1] = 0;
-	result.m[2][2] = scale.x;
+	result.m[2][2] = scale.z;
 	result.m[2][3] = 0;
 	result.m[3][0] = 0;
 	result.m[3][1] = 0;
@@ -156,15 +159,21 @@ Matrix4x4 Inverce(const Matrix4x4& m)
 {
 	Matrix4x4 result = {};
 	//|A|
-	float A = (m.m[0][0] * m.m[1][1] * m.m[2][2] * m.m[3][3] + m.m[0][0] * m.m[1][2] * m.m[2][3] * m.m[3][1] + m.m[0][0] * m.m[1][3] * m.m[2][1] * m.m[3][2]
-		- m.m[0][0] * m.m[1][3] * m.m[2][2] * m.m[3][1] - m.m[0][0] * m.m[1][2] * m.m[2][1] * m.m[3][3] - m.m[0][0] * m.m[1][1] * m.m[2][3] * m.m[3][2]
-		- m.m[0][1] * m.m[1][0] * m.m[2][2] * m.m[3][3] - m.m[0][2] * m.m[1][0] * m.m[2][3] * m.m[3][1] - m.m[0][3] * m.m[1][0] * m.m[2][1] * m.m[3][2]
-		+ m.m[0][3] * m.m[1][0] * m.m[2][2] * m.m[3][1] + m.m[0][2] * m.m[1][0] * m.m[2][1] * m.m[3][3] + m.m[0][1] * m.m[1][0] * m.m[2][3] * m.m[3][2]
-		+ m.m[0][1] * m.m[1][2] * m.m[2][0] * m.m[3][3] + m.m[0][2] * m.m[1][3] * m.m[2][0] * m.m[3][1] + m.m[0][3] * m.m[1][1] * m.m[2][0] * m.m[3][2]
-		- m.m[0][3] * m.m[1][2] * m.m[2][0] * m.m[3][1] - m.m[0][2] * m.m[1][1] * m.m[2][0] * m.m[3][3] - m.m[0][1] * m.m[1][3] * m.m[2][0] * m.m[3][2]
-		- m.m[0][1] * m.m[1][2] * m.m[2][3] * m.m[3][0] - m.m[0][2] * m.m[1][3] * m.m[2][1] * m.m[3][0] - m.m[0][3] * m.m[1][1] * m.m[2][2] * m.m[3][0]
-		+ m.m[0][3] * m.m[1][2] * m.m[2][1] * m.m[3][0] + m.m[0][2] * m.m[1][1] * m.m[2][3] * m.m[3][0] + m.m[0][1] * m.m[1][3] * m.m[2][2] * m.m[3][0]
-		);
+	float A = (m.m[0][0] * m.m[1][1] * m.m[2][2] * m.m[3][3]) + (m.m[0][0] * m.m[1][2] * m.m[2][3] * m.m[3][1]) + (m.m[0][0] * m.m[1][3] * m.m[2][1] * m.m[3][2]) -
+
+		(m.m[0][0] * m.m[1][3] * m.m[2][2] * m.m[3][1]) - (m.m[0][0] * m.m[1][2] * m.m[2][1] * m.m[3][3]) - (m.m[0][0] * m.m[1][1] * m.m[2][3] * m.m[3][2]) -
+
+		(m.m[0][1] * m.m[1][0] * m.m[2][2] * m.m[3][3]) - (m.m[0][2] * m.m[1][0] * m.m[2][3] * m.m[3][1]) - (m.m[0][3] * m.m[1][0] * m.m[2][1] * m.m[3][2]) +
+
+		(m.m[0][3] * m.m[1][0] * m.m[2][2] * m.m[3][1]) + (m.m[0][2] * m.m[1][0] * m.m[2][1] * m.m[3][3]) + (m.m[0][1] * m.m[1][0] * m.m[2][3] * m.m[3][2]) +
+
+		(m.m[0][1] * m.m[1][2] * m.m[2][0] * m.m[3][3]) + (m.m[0][2] * m.m[1][3] * m.m[2][0] * m.m[3][1]) + (m.m[0][3] * m.m[1][1] * m.m[2][0] * m.m[3][2]) -
+
+		(m.m[0][3] * m.m[1][2] * m.m[2][0] * m.m[3][1]) - (m.m[0][2] * m.m[1][1] * m.m[2][0] * m.m[3][3]) - (m.m[0][1] * m.m[1][3] * m.m[2][0] * m.m[3][2]) -
+
+		(m.m[0][1] * m.m[1][2] * m.m[2][3] * m.m[3][0]) - (m.m[0][2] * m.m[1][3] * m.m[2][1] * m.m[3][0]) - (m.m[0][3] * m.m[1][1] * m.m[2][2] * m.m[3][0]) +
+
+		(m.m[0][3] * m.m[1][2] * m.m[2][1] * m.m[3][0]) + (m.m[0][2] * m.m[1][1] * m.m[2][3] * m.m[3][0]) + (m.m[0][1] * m.m[1][3] * m.m[2][2] * m.m[3][0]);
 
 	result.m[0][0] = (m.m[1][1] * m.m[2][2] * m.m[3][3] + m.m[1][2] * m.m[2][3] * m.m[3][1] + m.m[1][3] * m.m[2][1] * m.m[3][2]
 		- m.m[1][3] * m.m[2][2] * m.m[3][1] - m.m[1][2] * m.m[2][1] * m.m[3][3] - m.m[1][1] * m.m[2][3] * m.m[3][2]) * (1 / A);
@@ -243,7 +252,7 @@ Vector3 Transform(Vector3 vector, Matrix4x4 matrix) {
 Matrix4x4 MakePerspectiveFovMatrix(float fovY, float aspectRotation, float nearClip, float farClip)
 {
 	Matrix4x4 result;
-	result.m[0][0] = 1 / aspectRotation * 1 / std::tan(fovY / 2);
+	result.m[0][0] = (1 / aspectRotation) * (1 / std::tan(fovY / 2));
 	result.m[0][1] = 0;
 	result.m[0][2] = 0;
 	result.m[0][3] = 0;
@@ -296,15 +305,15 @@ Matrix4x4 MakeViewPortMatrix(float left, float top, float width, float hight, fl
 	result.m[0][2] = 0;
 	result.m[0][3] = 0;
 	result.m[1][0] = 0;
-	result.m[1][1] = -hight / 2;
+	result.m[1][1] = -(hight / 2);
 	result.m[1][2] = 0;
 	result.m[1][3] = 0;
 	result.m[2][0] = 0;
 	result.m[2][1] = 0;
 	result.m[2][2] = maxDepth - minDepth;
 	result.m[2][3] = 0;
-	result.m[3][0] = left + width / 2;
-	result.m[3][1] = top + hight / 2;
+	result.m[3][0] = left + (width / 2);
+	result.m[3][1] = top + (hight / 2);
 	result.m[3][2] = minDepth;
 	result.m[3][3] = 1;
 
@@ -324,14 +333,17 @@ Matrix4x4 MakeAffineMatrix(const Vector3& scale, const Vector3& rotate, const Ve
 	result.m[0][1] = scaleMatrix.m[0][0] * rotateMatrix.m[0][1];
 	result.m[0][2] = scaleMatrix.m[0][0] * rotateMatrix.m[0][2];
 	result.m[0][3] = 0;
+
 	result.m[1][0] = scaleMatrix.m[1][1] * rotateMatrix.m[1][0];
 	result.m[1][1] = scaleMatrix.m[1][1] * rotateMatrix.m[1][1];
 	result.m[1][2] = scaleMatrix.m[1][1] * rotateMatrix.m[1][2];
 	result.m[1][3] = 0;
+
 	result.m[2][0] = scaleMatrix.m[2][2] * rotateMatrix.m[2][0];
 	result.m[2][1] = scaleMatrix.m[2][2] * rotateMatrix.m[2][1];
 	result.m[2][2] = scaleMatrix.m[2][2] * rotateMatrix.m[2][2];
 	result.m[2][3] = 0;
+
 	result.m[3][0] = transFormMatrix.m[3][0];
 	result.m[3][1] = transFormMatrix.m[3][1];
 	result.m[3][2] = transFormMatrix.m[3][2];
@@ -378,11 +390,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	Vector3 translate = { 0,0,0 };
 	Vector3 cameraPosition = { 0.0f,0.0f,-5.0f };
 	Vector3 kLocalVertices[3];
-	kLocalVertices[0] = { 0.5f,0.7f,-1.0f };
-	kLocalVertices[1] = { 0.7f,0.1f,-1.0f };
-	kLocalVertices[2] = { 0.3f,0.1f,-1.0f };
-
-	float playerXSize[3] = { 0.5f, 0.7f,0.3f };
+	kLocalVertices[0] = { 0.0f,0.7f,0.0f };
+	kLocalVertices[1] = { 0.3f,0.1f,0.0f };
+	kLocalVertices[2] = { -0.3f,0.1f,0.0f };
 
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
@@ -397,6 +407,27 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		/// ↓更新処理ここから
 		///
 
+		if (keys[DIK_A])
+		{
+			translate.x -= 0.01f;
+		}
+		if (keys[DIK_D])
+		{
+			translate.x += 0.01f;
+		}
+		if (keys[DIK_S])
+		{
+			translate.z -= 0.1f;
+		}
+
+		if (keys[DIK_W])
+		{
+			translate.z += 0.1f;
+		}
+		rotate.y += 0.01f;
+
+
+		
 
 		
 		//new
@@ -415,26 +446,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 		}
 
-		if (keys[DIK_A])
-		{
-			translate.x -= 0.01f;
-		}
-		if (keys[DIK_D])
-		{
-			translate.x += 0.01f;
-		}
-		rotate.y += 0.01f;
-
-
-		if (keys[DIK_S])
-		{
-			cameraPosition.z -= 0.1f;
-		}
-
-		if (keys[DIK_W])
-		{
-			cameraPosition.z += 0.1f;
-		}
+		
 
 		///
 		/// ↑更新処理ここまで
@@ -445,10 +457,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		VectorScreenPrintf(0, 0, cross, "Cross");
 		Novice::DrawTriangle(
-			int(screenVertices[0].x), int(screenVertices[0].y), int(screenVertices[1].x), int(screenVertices[1].y),
-			int(screenVertices[2].x), int(screenVertices[2].y), RED, kFillModeSolid
+			int(screenVertices[0].x), int(screenVertices[0].y), 
+			int(screenVertices[1].x), int(screenVertices[1].y),
+			int(screenVertices[2].x), int(screenVertices[2].y), 
+			RED, kFillModeSolid
 		);
-		Novice::ScreenPrintf(30, 30, "%f", translate.x);
 		///
 		/// ↑描画処理ここまで
 		///
